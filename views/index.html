@@ -2,16 +2,42 @@
 <html>
   <head>
     <title>CSP Test page</title>
+    <link rel="stylesheet" href="css/style.css"/>
   </head>
   <body>
     <h1>CSP Test page</h1>
+    
+    <!--
     <iframe id="iframe1" src="https://teched-lunchtime.azurewebsites.net"></iframe>
     <div> 
         <button id="btnNavigate1">Navigate to http://teched-lunchtime.azurewebsites.net</button>
         <button id="btnNavigate2">Navigate to http://www.wikipedia.org</button>
         <button id="btnNavigate3">Navigate to http://msgnotify.azurewebsites.net/sitea.html</button>
     </div>
-    <script src='javascripts/jquery-2.1.0.js'></script>
-    <script src='javascripts/index.js'></script>
+    -->
+
+    <div id="knockoutForm">
+      <table data-bind='visible: directives().length > 0'>
+        <thead>
+          <tr>
+            <th>Directive</th>
+            <th>Value</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody data-bind='foreach: directives' class='code'>
+          <tr>
+            <td><select data-bind='options: CSP, optionsText: "name", optionsCaption: "Select...", value: "name"'></<select>
+            </select> </td>
+            <td data-bind="with: name"><select data-bind='options: directives, optionsText: "name", optionsCaption: "Select..."'></select></td>
+            <td><a href='#' data-bind='click: allowUnsafeEval'>+ unsafe eval</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <script src='js/jquery-2.1.0.js'></script>
+    <script src='js/knockout-3.2.0.js'></script>
+    <script src='js/cspTaxonomy.js'></script>
+    <script src='js/index.js'></script>
   </body>
 </html>
