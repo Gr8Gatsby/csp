@@ -1,6 +1,7 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  width: 800px;
 }
 
 a {
@@ -9,4 +10,34 @@ a {
 
 .code {
 	font-family: Consolas;
+}
+
+.vids {
+    float:left;
+}
+
+.comment {
+    font-family: Helvetica;
+    font-size: 14px;
+    color: #040004;
+    font-weight: 800;
+    clear: both;
+    background-color: #eee;
+    padding-top: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 25px;
+    border-radius: 15px;
+}
+
+#comments {
+    clear:both;
+    color: #61A6AB;
+}
+
+.name {
+    color: #61A6AB;
+    font-family: Helvetica;
+    font-weight: 100;
+    font-style: italic;
 }

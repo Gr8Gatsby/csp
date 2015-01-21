@@ -1,43 +1,56 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>CSP Test page</title>
-    <link rel="stylesheet" href="css/style.css"/>
-  </head>
-  <body>
-    <h1>CSP Test page</h1>
-    
-    <!--
-    <iframe id="iframe1" src="https://teched-lunchtime.azurewebsites.net"></iframe>
-    <div> 
-        <button id="btnNavigate1">Navigate to http://teched-lunchtime.azurewebsites.net</button>
-        <button id="btnNavigate2">Navigate to http://www.wikipedia.org</button>
-        <button id="btnNavigate3">Navigate to http://msgnotify.azurewebsites.net/sitea.html</button>
-    </div>
-    -->
+    <head>
+        <title>Awesome blog</title>
+        <link rel="stylesheet" href="css/style.css"/>
+    </head>
+    <body>
+        <h1>Announcing RemoteIE: Test the latest IE on Windows, Mac OS X, iOS and Android</h1>
+                  
+        <p>Published Sunday, November 2, 2014 8:30 PM</p>
+        
+        <p>Today, we’re excited to announce the preview availability of RemoteIE via Azure RemoteApp. This is a free service from Microsoft that allows you to run the latest version of Internet Explorer on the Windows 10 Technical Preview from your Windows, Mac OS X, iOS or Android devices, without the need to run a new OS or heavyweight virtual machine on your device. Going forward, this will be the recommended way for developers who are not running Windows 10 to test the latest IE preview versions.</p>
+        <div>
+        <div class="vids">
+        <video controls autoplay loop id="video" src="https://mtc.cdn.vine.co/r/videos/DEA86FBDE01140086083447603200_31d3f577aa6.0.1.11479814666294830956.mp4?versionId=BRtKeGDqMRWgTMV1cVXAw0qq6IfYCUKX" preload="auto" muted="" poster="https://v.cdn.vine.co/r/thumbs/5B4EB2E40F1140086086199136256_3.0.1.11479814666294830956.mp4.jpg?versionId=YBy688tVd3gtEp9PCVQcdf0zB_v7Ahdy" type="video/mp4" width="320px" height="320px"></video>
+        </div>
+        <div class="vids">
+        <video controls autoplay loop id="video" src="https://v.cdn.vine.co/r/videos/048BE809A01140085295430221824_3967cd1e01d.0.1.5599713372636763176.mp4?versionId=eKJQNONjGjg8ISvJHNol8p3l47ox4Yyj" preload="auto" muted="" poster="https://v.cdn.vine.co/r/thumbs/8ADC1D2BC41140085298869755904_3.0.1.5599713372636763176.mp4.jpg?versionId=bFpmB4subuQGN2K5qpgAgHwYdCTerj4x" type="video/mp4" width="320px" height="320px"></video>
+        </div>
+        </div>
+        <br/> 
+        
+        <div id="comments">
+            <h3>Comments:</h3> 
+            <div class="comment">
+                <div class="name">User: ObviousHacker</div>
+                Hey your blog videos seem a bit off ;)
+                
+                <script>
+                    window.addEventListener('load', videoSwap)
 
-    <div id="knockoutForm">
-      <table data-bind='visible: directives().length > 0'>
-        <thead>
-          <tr>
-            <th>Directive</th>
-            <th>Value</th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody data-bind='foreach: directives' class='code'>
-          <tr>
-            <td><select data-bind='options: CSP, optionsText: "name", optionsCaption: "Select...", value: "name"'></<select>
-            </select> </td>
-            <td data-bind="with: name"><select data-bind='options: directives, optionsText: "name", optionsCaption: "Select..."'></select></td>
-            <td><a href='#' data-bind='click: allowUnsafeEval'>+ unsafe eval</a></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <script src='js/jquery-2.1.0.js'></script>
-    <script src='js/knockout-3.2.0.js'></script>
-    <script src='js/cspTaxonomy.js'></script>
-    <script src='js/index.js'></script>
-  </body>
+                    function videoSwap(){
+                        var videos = document.getElementsByTagName('video');
+
+                        while(videos.length > 0) {
+                            console.log(videos[0]);
+                            var parentElement = videos[0].parentElement;
+                            parentElement.replaceChild(addRickRoll(), videos[0]);
+                        }
+                    }
+
+                    function addRickRoll(element){
+
+                        var rickRollElement = document.createElement('iframe');
+                        rickRollElement.setAttribute('width','240');
+                        rickRollElement.setAttribute('height','315');
+                        rickRollElement.setAttribute('src','http://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1');
+                        rickRollElement.setAttribute('frameborder','0');
+
+                        return rickRollElement;
+                    }
+                </script>
+            </div>  
+        </div>
+    </body>
 </html>
